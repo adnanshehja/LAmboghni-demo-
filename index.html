@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f1f1ed">
+  <meta name="description" content="The Lamborghini Lineup — an animated concept showcase of the Aventador Ultimae, Huracán Tecnica and Urus. Website created by Adnan Shaikh.">
+  <title>The Lineup — Lamborghini Concept | Adnan Shaikh</title>
+
+  <link rel="icon" href="assets/lamborghini-badge.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/archivo-black-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-tight-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="is-loading">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <img class="preloader__mark" src="assets/lamborghini-badge.svg" alt="">
+      <span class="preloader__word">Lamborghini</span>
+      <div class="preloader__track"><span class="preloader__bar"></span></div>
+      <div class="preloader__foot">
+        <span>Sant'Agata Bolognese</span>
+        <span class="preloader__count" id="preloaderCount">00</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-noise" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="site-header__inner">
+      <a class="brand" href="#top" aria-label="Lamborghini concept home">
+        <img class="brand__mark" src="assets/lamborghini-badge.svg" alt="">
+        <span class="brand__word">Lamborghini</span>
+      </a>
+
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <a class="nav__link" href="#models">Models</a>
+        <a class="nav__link" href="#design">Design</a>
+        <a class="nav__link" href="#ownership">Ownership</a>
+        <a class="nav__link" href="#credit">Credit</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="searchOpen" type="button" aria-label="Search the lineup">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
+        </button>
+        <button class="credit-pill credit-pill--header" type="button" data-credit-open>
+          <span class="credit-pill__dot"></span>
+          Site by Adnan Shaikh
+        </button>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="hero__aura" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow hero__eyebrow"><span class="eyebrow__line"></span> Automobili Lamborghini · Est. 1963</p>
+          <h1 class="hero__title">
+            <span class="hero__title-inner hero__title-inner--small">The</span>
+            <span class="hero__title-inner">Lineup<span class="hero__dot">.</span></span>
+          </h1>
+          <p class="hero__lede">Three machines. One relentless idea — turn every road into an occasion. The final V12, the track-bred V10, and the super SUV that refuses to slow down.</p>
+
+          <div class="hero__actions">
+            <a class="btn btn--dark" href="#models">
+              <span>Explore the lineup</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>
+            </a>
+            <a class="text-link" href="#aventador">
+              <span class="text-link__play">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5-10-6.5Z"></path></svg>
+              </span>
+              Meet the Aventador
+            </a>
+          </div>
+
+          <dl class="hero__stats" aria-label="Aventador highlights">
+            <div class="hero__stat">
+              <dt>Max speed</dt>
+              <dd><span data-count="355">0</span><small>km/h</small></dd>
+            </div>
+            <div class="hero__stat">
+              <dt>0–100 km/h</dt>
+              <dd><span data-count="2.9" data-decimals="1">0.0</span><small>s</small></dd>
+            </div>
+            <div class="hero__stat">
+              <dt>Power</dt>
+              <dd><span data-count="770">0</span><small>hp</small></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero__visual" aria-label="Aventador LP 780-4 Ultimae Roadster">
+          <span class="hero__ghost" aria-hidden="true">AVENTADOR</span>
+          <div class="hero__car-reveal">
+            <div class="hero__car" id="heroCar">
+              <img src="assets/aventador-teal.webp" alt="Teal Lamborghini Aventador LP 780-4 Ultimae Roadster, three-quarter front view" width="1400" height="619" fetchpriority="high">
+            </div>
+          </div>
+          <div class="hero__car-tag">
+            <span class="hero__car-tag-index">01</span>
+            <span class="hero__car-tag-name">Aventador LP 780–4<br>Ultimae Roadster</span>
+            <span class="hero__car-tag-color" aria-hidden="true"></span>
+          </div>
+          <span class="hero__ring hero__ring--1" aria-hidden="true"></span>
+          <span class="hero__ring hero__ring--2" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="container hero__foot">
+        <span class="hero__foot-note">Scroll to discover</span>
+        <span class="hero__foot-line" aria-hidden="true"></span>
+        <span class="hero__foot-note">Concept showcase · 2026</span>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Pure Italian performance <i>◆</i> V12 <i>◆</i> V10 <i>◆</i> V8 <i>◆</i> Since 1963 <i>◆</i> </span>
+        <span>Pure Italian performance <i>◆</i> V12 <i>◆</i> V10 <i>◆</i> V8 <i>◆</i> Since 1963 <i>◆</i> </span>
+      </div>
+    </div>
+
+    <!-- Manifesto -->
+    <section class="manifesto" id="design">
+      <div class="container">
+        <div class="manifesto__head reveal">
+          <p class="eyebrow"><span class="eyebrow__line"></span> The collection · 01—03</p>
+          <p class="manifesto__coords">45.6596° N<br>11.1310° E</p>
+        </div>
+        <h2 class="manifesto__title reveal">Born on the track.<br><span>Built for the road.</span></h2>
+        <div class="manifesto__bottom">
+          <p class="manifesto__lede reveal">Every Lamborghini starts with the same question: what if we removed the compromise? The answer is never sensible. It is sculpted, sonorous and unreasonable — exactly as it should be.</p>
+          <div class="manifesto__index reveal">
+            <a href="#aventador"><span>01</span> Aventador</a>
+            <a href="#huracan"><span>02</span> Huracán</a>
+            <a href="#urus"><span>03</span> Urus</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Models -->
+    <section class="models" id="models" aria-label="Lamborghini model lineup">
+      <div class="container">
+
+        <!-- Aventador -->
+        <article class="model model--aventador reveal" id="aventador">
+          <div class="model__stage">
+            <div class="model__stage-top">
+              <span class="model__stage-label">01 / 03</span>
+              <span class="model__stage-label">V12 · AWD · Roadster</span>
+            </div>
+            <h2 class="model__ghost" aria-hidden="true">AVENTADOR</h2>
+            <div class="model__car-wrap">
+              <img class="model__car" src="assets/aventador-teal.webp" alt="Teal Lamborghini Aventador LP 780-4 Ultimae Roadster, three-quarter front view" width="1400" height="619" loading="lazy">
+            </div>
+            <span class="model__stage-index" aria-hidden="true">01</span>
+            <div class="model__stage-bottom">
+              <span class="model__accent-dot"></span>
+              <span>Verde Artemis</span>
+            </div>
+          </div>
+
+          <div class="model__bar">
+            <div class="model__identity">
+              <img class="model__logo" src="assets/lamborghini-badge.svg" alt="">
+              <div>
+                <span class="model__brand">Lamborghini</span>
+                <h3 class="model__name">Aventador</h3>
+                <p class="model__trim">LP 780–4 Ultimae Roadster</p>
+              </div>
+            </div>
+
+            <div class="model__specs">
+              <div class="spec">
+                <span class="spec__label">Max speed</span>
+                <span class="spec__value"><span data-count="355">0</span><small>km/h</small></span>
+              </div>
+              <div class="spec">
+                <span class="spec__label">0–100 km/h</span>
+                <span class="spec__value"><span data-count="2.9" data-decimals="1">0.0</span><small>s</small></span>
+              </div>
+              <div class="spec">
+                <span class="spec__label">Horsepower</span>
+                <span class="spec__value"><span data-count="770">0</span><small>hp</small></span>
+              </div>
+            </div>
+
+            <button class="model__toggle" type="button" aria-expanded="false" aria-controls="details-aventador" aria-label="Show Aventador details">
+              <span></span><span></span>
+            </button>
+          </div>
+
+          <div class="model__details" id="details-aventador">
+            <div class="model__details-inner">
+              <div>
+                <p class="model__details-kicker">The final V12</p>
+                <p class="model__details-copy">The last Aventador combines the most powerful V12 in the model's history with active aerodynamics and a carbon-fibre monocoque. A limited-run farewell to an icon.</p>
+              </div>
+              <ul class="tag-list" aria-label="Aventador highlights">
+                <li>Naturally aspirated V12</li>
+                <li>All-wheel drive</li>
+                <li>Carbon-fibre monocoque</li>
+              </ul>
+              <a class="round-link" href="#credit" aria-label="Go to website credit">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"></path></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Huracán -->
+        <article class="model model--huracan reveal" id="huracan">
+          <div class="model__stage">
+            <div class="model__stage-top">
+              <span class="model__stage-label">02 / 03</span>
+              <span class="model__stage-label">V10 · RWD · Trackwear</span>
+            </div>
+            <h2 class="model__ghost" aria-hidden="true">HURACÁN</h2>
+            <div class="model__car-wrap">
+              <img class="model__car" src="assets/huracan-green.webp" alt="Green Lamborghini Huracán Tecnica, three-quarter front view" width="1400" height="619" loading="lazy">
+            </div>
+            <span class="model__stage-index" aria-hidden="true">02</span>
+            <div class="model__stage-bottom">
+              <span class="model__accent-dot"></span>
+              <span>Verde Selvans</span>
+            </div>
+          </div>
+
+          <div class="model__bar">
+            <div class="model__identity">
+              <img class="model__logo" src="assets/lamborghini-badge.svg" alt="">
+              <div>
+                <span class="model__brand">Lamborghini</span>
+                <h3 class="model__name">Huracán</h3>
+                <p class="model__trim">Tecnica</p>
+              </div>
+            </div>
+
+            <div class="model__specs">
+              <div class="spec">
+                <span class="spec__label">Max speed</span>
+                <span class="spec__value"><span data-count="325">0</span><small>km/h</small></span>
+              </div>
+              <div class="spec">
+                <span class="spec__label">0–100 km/h</span>
+                <span class="spec__value"><span data-count="3.2" data-decimals="1">0.0</span><small>s</small></span>
+              </div>
+              <div class="spec">
+                <span class="spec__label">Horsepower</span>
+                <span class="spec__value"><span data-count="630">0</span><small>hp</small></span>
+              </div>
+            </div>
+
+            <button class="model__toggle" type="button" aria-expanded="false" aria-controls="details-huracan" aria-label="Show Huracán details">
+              <span></span><span></span>
+            </button>
+          </div>
+
+          <div class="model__details" id="details-huracan">
+            <div class="model__details-inner">
+              <div>
+                <p class="model__details-kicker">The track-bred V10</p>
+                <p class="model__details-copy">A rear-wheel-drive Huracán built for the track and tuned for the road. Aerodynamics borrowed from the STO, without the compromises — pure theatre in every gear.</p>
+              </div>
+              <ul class="tag-list" aria-label="Huracán highlights">
+                <li>Naturally aspirated V10</li>
+                <li>Rear-wheel drive</li>
+                <li>Track-tuned aero</li>
+              </ul>
+              <a class="round-link" href="#credit" aria-label="Go to website credit">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"></path></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Urus -->
+        <article class="model model--urus reveal" id="urus">
+          <div class="model__stage">
+            <div class="model__stage-top">
+              <span class="model__stage-label">03 / 03</span>
+              <span class="model__stage-label">V8 · AWD · Super SUV</span>
+            </div>
+            <h2 class="model__ghost" aria-hidden="true">URUS</h2>
+            <div class="model__car-wrap">
+              <img class="model__car" src="assets/urus-black.webp" alt="Black Lamborghini Urus Graphite Capsule, three-quarter front view" width="1400" height="619" loading="lazy">
+            </div>
+            <span class="model__stage-index" aria-hidden="true">03</span>
+            <div class="model__stage-bottom">
+              <span class="model__accent-dot"></span>
+              <span>Graphite Capsule · Nero Noctis</span>
+            </div>
+          </div>
+
+          <div class="model__bar">
+            <div class="model__identity">
+              <img class="model__logo" src="assets/lamborghini-badge.svg" alt="">
+              <div>
+                <span class="model__brand">Lamborghini</span>
+                <h3 class="model__name">Urus</h3>
+                <p class="model__trim">Graphite Capsule</p>
+              </div>
+            </div>
+
+            <div class="model__specs">
+              <div class="spec">
+                <span class="spec__label">Max speed</span>
+                <span class="spec__value"><span data-count="305">0</span><small>km/h</small></span>
+              </div>
+              <div class="spec">
+                <span class="spec__label">0–100 km/h</span>
+                <span class="spec__value"><span data-count="3.6" data-decimals="1">0.0</span><small>s</small></span>
+              </div>
+              <div class="spec">
+                <span class="spec__label">Horsepower</span>
+                <span class="spec__value"><span data-count="640">0</span><small>hp</small></span>
+              </div>
+            </div>
+
+            <button class="model__toggle" type="button" aria-expanded="false" aria-controls="details-urus" aria-label="Show Urus details">
+              <span></span><span></span>
+            </button>
+          </div>
+
+          <div class="model__details" id="details-urus">
+            <div class="model__details-inner">
+              <div>
+                <p class="model__details-kicker">The everyday supercar</p>
+                <p class="model__details-copy">The Lamborghini of daily drivers. A twin-turbo V8, all-wheel drive and space for four — with a soundtrack and silhouette that make the school run feel like a lap of Imola.</p>
+              </div>
+              <ul class="tag-list" aria-label="Urus highlights">
+                <li>Twin-turbo V8</li>
+                <li>All-wheel drive</li>
+                <li>Graphite Capsule</li>
+              </ul>
+              <a class="round-link" href="#credit" aria-label="Go to website credit">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"></path></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Ownership -->
+    <section class="ownership" id="ownership">
+      <div class="ownership__glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="ownership__head">
+          <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__line"></span> Beyond the drive</p>
+          <h2 class="ownership__title reveal">More than a car.<br><span>A point of view.</span></h2>
+          <p class="ownership__lede reveal">From the first sketch to the final drive, every detail is an invitation to make it yours. This is ownership, the Lamborghini way.</p>
+        </div>
+
+        <div class="ownership__grid">
+          <article class="feature reveal">
+            <div class="feature__top">
+              <span class="feature__num">01</span>
+              <svg class="feature__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17"></circle><path d="M24 11v26M11 24h26"></path></svg>
+            </div>
+            <h3>Tailor made</h3>
+            <p>Colours, materials and details composed around you. A specification that exists exactly once.</p>
+            <a href="#credit" class="feature__link">Discover more <span>↗</span></a>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__top">
+              <span class="feature__num">02</span>
+              <svg class="feature__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5 40 12v12c0 10-7 16-16 19C15 40 8 34 8 24V12L24 5Z"></path><path d="m17 24 5 5 9-11"></path></svg>
+            </div>
+            <h3>Peace of mind</h3>
+            <p>Dedicated service, genuine parts and a network that treats every car as a piece of the marque.</p>
+            <a href="#credit" class="feature__link">Discover more <span>↗</span></a>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__top">
+              <span class="feature__num">03</span>
+              <svg class="feature__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M7 34h34M11 34l5-17h16l5 17M18 17V9h12v8"></path><circle cx="16" cy="38" r="4"></circle><circle cx="32" cy="38" r="4"></circle></svg>
+            </div>
+            <h3>Motorsport</h3>
+            <p>Race-bred engineering, carried from the circuit to the road. The track is where every idea is proven.</p>
+            <a href="#credit" class="feature__link">Discover more <span>↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Credit -->
+    <section class="credit" id="credit">
+      <div class="credit__orb" aria-hidden="true"></div>
+      <div class="container">
+        <div class="credit__top reveal">
+          <p class="eyebrow"><span class="eyebrow__line"></span> The credit</p>
+          <span class="credit__year">Concept · 2026</span>
+        </div>
+
+        <div class="credit__main">
+          <div class="reveal">
+            <p class="credit__kicker">Website created by</p>
+            <h2 class="credit__name">Adnan<br><span>Shaikh</span></h2>
+          </div>
+          <div class="credit__side reveal">
+            <p>Design, motion and development of this Lamborghini concept showcase. Built to make the machines — and the numbers — feel alive.</p>
+            <dl class="credit__meta">
+              <div><dt>Role</dt><dd>Design &amp; development</dd></div>
+              <div><dt>Type</dt><dd>Animated concept site</dd></div>
+              <div><dt>Year</dt><dd>2026</dd></div>
+            </dl>
+            <button class="btn btn--dark" type="button" data-credit-open>
+              <span>Open credit</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>
+            </button>
+          </div>
+        </div>
+
+        <p class="credit__disclaimer reveal">Fan-made concept showcase. Not affiliated with, endorsed by or sponsored by Automobili Lamborghini S.p.A. Vehicle visuals are illustrative.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <a class="brand brand--footer" href="#top" aria-label="Back to top">
+        <img class="brand__mark" src="assets/lamborghini-badge.svg" alt="">
+        <span class="brand__word">Lamborghini</span>
+      </a>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="#models">Models</a>
+        <a href="#design">Design</a>
+        <a href="#ownership">Ownership</a>
+        <a href="#credit">Credit</a>
+      </nav>
+      <p class="footer__credit">© 2026 · Website created by <button type="button" data-credit-open>Adnan Shaikh</button></p>
+    </div>
+    <div class="container footer__bottom">
+      <span>Sant'Agata Bolognese · Italia</span>
+      <a href="#top" class="back-top">Back to top <span>↑</span></a>
+    </div>
+  </footer>
+
+  <!-- Floating credit -->
+  <button class="credit-chip" id="creditChip" type="button" data-credit-open aria-label="View website credit">
+    <span class="credit-chip__mark">A</span>
+    <span class="credit-chip__text">Site by<br><b>Adnan Shaikh</b></span>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"></path></svg>
+  </button>
+
+  <!-- Credit modal -->
+  <div class="modal" id="creditModal" aria-hidden="true">
+    <div class="modal__backdrop" data-credit-close></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="creditTitle" tabindex="-1">
+      <button class="modal__close" type="button" data-credit-close aria-label="Close credit">
+        <span></span><span></span>
+      </button>
+      <p class="modal__eyebrow"><span></span> Website credit</p>
+      <h2 class="modal__title" id="creditTitle">Created by<br>Adnan Shaikh</h2>
+      <p class="modal__copy">This animated Lamborghini concept showcase was designed and developed by Adnan Shaikh. Thanks for looking under the hood.</p>
+      <div class="modal__card">
+        <div>
+          <span>Design &amp; development</span>
+          <strong>Adnan Shaikh</strong>
+        </div>
+        <span class="modal__card-year">2026</span>
+      </div>
+      <div class="modal__actions">
+        <button class="btn btn--dark" type="button" id="copyCredit">
+          <span>Copy credit</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="11" height="11" rx="2"></rect><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path></svg>
+        </button>
+        <button class="text-link text-link--button" type="button" data-credit-close>Back to the site</button>
+      </div>
+      <p class="modal__fine">Fan-made concept. Not affiliated with Automobili Lamborghini S.p.A.</p>
+    </div>
+  </div>
+
+  <!-- Search overlay -->
+  <div class="search" id="searchPanel" aria-hidden="true">
+    <div class="search__backdrop" data-search-close></div>
+    <div class="search__dialog" role="dialog" aria-modal="true" aria-labelledby="searchTitle" tabindex="-1">
+      <div class="search__top">
+        <p class="modal__eyebrow" id="searchTitle"><span></span> Search the lineup</p>
+        <button class="modal__close" type="button" data-search-close aria-label="Close search">
+          <span></span><span></span>
+        </button>
+      </div>
+      <label class="search__field">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
+        <input id="searchInput" type="search" placeholder="Try “Aventador” or “V10”" autocomplete="off">
+      </label>
+      <div class="search__results" id="searchResults">
+        <a href="#aventador" data-search-term="aventador v12 ultimae roadster 770"><span>01</span><strong>Aventador</strong><em>LP 780–4 Ultimae Roadster</em></a>
+        <a href="#huracan" data-search-term="huracan técnico tecnica v10 track 630"><span>02</span><strong>Huracán</strong><em>Tecnica</em></a>
+        <a href="#urus" data-search-term="urus v8 super suv graphite 640"><span>03</span><strong>Urus</strong><em>Graphite Capsule</em></a>
+      </div>
+      <p class="search__empty" id="searchEmpty" hidden>No model matches that. Try “Aventador”, “Huracán” or “Urus”.</p>
+      <p class="search__hint">Press <kbd>Esc</kbd> to close</p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Credit copied to clipboard</div>
+
+  <noscript><style>.preloader{display:none}body{overflow:auto}.reveal{opacity:1;transform:none}</style></noscript>
+  <script src="script.js"></script>
+</body>
+</html>
